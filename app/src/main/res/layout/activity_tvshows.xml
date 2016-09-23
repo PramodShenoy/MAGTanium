@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="com.example.android.magtanium.Movies">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Flicks"
+            android:id="@+id/Rec_fli"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="100dp"
+            android:textStyle="bold"
+            />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/Rec_fli"
+            android:id="@+id/flixlist"></ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for any TV Series"
+            android:textSize="20sp"
+            android:layout_below="@id/flixlist"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+
+    </RelativeLayout>
+</ScrollView>
