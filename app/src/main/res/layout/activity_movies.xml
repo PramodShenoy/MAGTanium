@@ -50,6 +50,7 @@
         android:layout_below="@id/ed_text"
         android:layout_marginTop="10dp"
         android:text="Search"
+        android:id="@+id/se_mov"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>
 </ScrollView>
