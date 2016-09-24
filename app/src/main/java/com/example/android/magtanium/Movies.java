@@ -30,8 +30,4 @@ public class Movies extends android.support.v4.app.Fragment{
         });
         return v;
     }
-
-
-
-
 }
