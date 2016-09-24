@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="18sp"
-            android:text="Genre"
+            android:text="Genre Def"
             android:id="@+id/genre"
             android:textColor="#FFFFFF"
             android:layout_marginLeft="20dp"
