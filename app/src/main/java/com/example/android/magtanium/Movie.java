@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class Movie extends AppCompatActivity {
 
-    TextView tv, tv1, tv2;
+    TextView tv, tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
     String sentence;
     MovieInfo defaultmo= new MovieInfo();
 
@@ -23,22 +23,33 @@ public class Movie extends AppCompatActivity {
 
         Intent i=getIntent();
         sentence=i.getStringExtra("Movie name");
-        tv = (TextView) findViewById(R.id.description);
-        tv1= (TextView) findViewById(R.id.name);
-        tv2= (TextView) findViewById(R.id.imdb);
+
+        tv1= (TextView) findViewById(R.id.movie_name);
+        tv2= (TextView) findViewById(R.id.imdb_rating);
+
+        tv3 = (TextView) findViewById(R.id.metscore);
+        tv4= (TextView) findViewById(R.id.genre);
+        tv5= (TextView) findViewById(R.id.release_date);
+
+        tv6 = (TextView) findViewById(R.id.director_name);
+        tv7= (TextView) findViewById(R.id.writer_name);
+        tv8= (TextView) findViewById(R.id.actors);
+        tv9= (TextView) findViewById(R.id.movie_plot);
+
+
         StringBuilder QUERY = new StringBuilder();
         QUERY.append("http://www.omdbapi.com/?t=");
         sentence.toLowerCase();
         sentence = sentence.replace(' ', '+');
         QUERY.append(sentence);
         QUERY.append("&y=&plot=full&r=json\\");
-        YodaAsyncTask yoda = new YodaAsyncTask();
-        yoda.execute(QUERY.toString());
+        MovieAsyncTask movie_search = new MovieAsyncTask();
+        movie_search.execute(QUERY.toString());
 
 
     }
 
-    private class YodaAsyncTask extends AsyncTask<String, Void, MovieInfo> {
+    private class MovieAsyncTask extends AsyncTask<String, Void, MovieInfo> {
         @Override
         protected MovieInfo doInBackground(String... urls) {
 
@@ -59,9 +70,24 @@ public class Movie extends AppCompatActivity {
             String quote = mov.getPlot();
             String name= mov.getMovieName();
             String imdb= mov.getIMDBRating();
-            tv.setText(quote);
+
+            String genre = mov.getGenre();
+            String meta= mov.getMeta();
+            String rel= mov.getRelease();
+
+            String dir = mov.getDirector();
+            String writer= mov.getWriter();
+            String actor= mov.getActors();
+
+            tv9.setText(quote);
             tv1.setText(name);
-            tv1.setText(imdb);
+            tv2.setText(imdb);
+            tv3.setText(meta);
+            tv4.setText(genre);
+            tv5.setText(rel);
+            tv6.setText(dir);
+            tv7.setText(writer);
+            tv8.setText(actor);
         }
     }
 
@@ -69,6 +95,12 @@ public class Movie extends AppCompatActivity {
         String plot = "";
         String title = "";
         String imdb = "";
+        String genre="";
+        String meta="";
+        String actors="";
+        String director="";
+        String writers="";
+        String rel="";
 
         if (TextUtils.isEmpty(jsonResp)) {
             return null;
@@ -79,10 +111,19 @@ public class Movie extends AppCompatActivity {
             plot = baseJsonResponse.optString("Plot");
             title = baseJsonResponse.optString("Title");
             imdb =baseJsonResponse.optString("imdbRating");
+
+            genre = baseJsonResponse.optString("Genre");
+            meta = baseJsonResponse.optString("Metascore");
+            actors =baseJsonResponse.optString("Actors");
+
+            director = baseJsonResponse.optString("Director");
+            writers = baseJsonResponse.optString("Writer");
+            rel =baseJsonResponse.optString("Released");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        MovieInfo movie1 = new MovieInfo(title, plot, imdb);
+        MovieInfo movie1 = new MovieInfo(title, genre, imdb, meta, rel, director, writers, actors, plot);
         return movie1;
     }
 

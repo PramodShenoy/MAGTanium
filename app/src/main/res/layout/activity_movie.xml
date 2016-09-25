@@ -33,9 +33,9 @@
             android:layout_width="50dp"
             android:layout_height="25dp"
             android:src="@drawable/imdb_logo"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="125dp"
             android:id="@+id/imdb_logo_image"
-            android:layout_below="@id/genre"
+
             android:layout_toRightOf="@id/movieposter"
             android:layout_marginLeft="20dp"/>
         <TextView
@@ -47,8 +47,8 @@
             android:textSize="18sp"
             android:layout_marginLeft="7dp"
             android:layout_toRightOf="@id/imdb_logo_image"
-            android:layout_below="@id/genre"
-            android:layout_marginTop="11dp"/>
+
+            android:layout_marginTop="125dp"/>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -82,15 +82,143 @@
             android:layout_below="@id/movie_name"
             android:layout_toRightOf="@id/movieposter"
             />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/view_normal"
+        android:id="@+id/linear_lay">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Release Date: "
+            android:layout_marginLeft="10dp"
+            android:id="@+id/rd"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_below="@id/view_normal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_marginTop="4dp"
+            android:text="Some date"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:id="@+id/release_date"
+            android:layout_toRightOf="@id/rd"
+            android:textSize="18sp"
+            android:layout_below="@id/view_normal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/rd"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:id="@+id/dir"
+            android:text="Director: "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:text="Name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_below="@id/release_date"
+            android:layout_toRightOf="@id/dir"
+            android:id="@+id/director_name"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/dir"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:id="@+id/wr"
+            android:text="Writers: "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:text="Name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_below="@id/dir"
+            android:layout_toRightOf="@id/wr"
+            android:id="@+id/writer_name"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_below="@id/wr"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:id="@+id/ca"
+            android:text="Actors: "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:text="Actors"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_below="@id/wr"
+            android:layout_toRightOf="@id/ca"
+            android:id="@+id/actors"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/linear_lay"
+
+            android:id="@+id/separator"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Release Date: "
+            android:layout_below="@id/separator"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:textSize="18sp"
             android:textColor="#000000"
-            android:layout_below="@id/view_normal"/>
-
+            android:id="@+id/pl"
+            android:text="Plot: "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="6dp"
+            android:id="@+id/movie_plot"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/pl"
+            android:layout_marginBottom="16dp"/>
     </RelativeLayout>
 </ScrollView>

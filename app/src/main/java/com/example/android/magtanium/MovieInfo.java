@@ -9,28 +9,70 @@ public class MovieInfo {
     private String mPlot;
     private String mIMDBRating;
 
-    public MovieInfo(String MovieName, String Plot, String IMDB)
-    {
-        mMovieName=MovieName;
-        mPlot=Plot;
-        mIMDBRating=IMDB;
+    private String mActors;
+    private String mDirector;
+    private String mReleaseDate;
+
+    private String mWriters;
+    private String mMetascore;
+    private String mGenre;
+
+    public MovieInfo(String MovieName, String Genre, String IMDB, String Meta, String Rel, String Director, String Writers, String Actors, String Plot) {
+        mMovieName = MovieName;
+        mPlot = Plot;
+        mIMDBRating = IMDB;
+
+        mActors= Actors;
+        mDirector=Director;
+        mReleaseDate=Rel;
+
+        mWriters=Writers;
+        mMetascore=Meta;
+        mGenre=Genre;
+
     }
 
-    public MovieInfo()
-    {
-        mMovieName="Random";
-        mPlot="Random";
-        mIMDBRating="Random";
+    public MovieInfo() {
+        mMovieName = "Random";
+        mPlot = "Random";
+        mIMDBRating = "Random";
     }
 
-    public String getMovieName(){
-        return  mMovieName;
+    //Getter Methods
+    public String getMovieName() {
+        return mMovieName;
     }
-    public  String getPlot(){
+
+    public String getPlot() {
         return mPlot;
     }
-    public String getIMDBRating(){
+
+    public String getIMDBRating() {
         return mIMDBRating;
+    }
+
+    public String getDirector() {
+        return mDirector;
+    }
+
+    public String getMeta() {
+        return mMetascore;
+    }
+
+    public String getActors() {
+        return mActors;
+    }
+
+    public String getWriter() {
+        return mWriters;
+    }
+
+    public String getGenre() {
+        return mGenre;
+    }
+
+    public String getRelease() {
+        return mReleaseDate;
     }
 }
 
