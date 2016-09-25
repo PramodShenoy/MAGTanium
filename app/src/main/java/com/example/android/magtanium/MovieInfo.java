@@ -1,13 +1,12 @@
 package com.example.android.magtanium;
 
-/**
- * Created by MAHE on 9/24/2016.
- */
+
 public class MovieInfo {
 
     private String mMovieName;
     private String mPlot;
     private String mIMDBRating;
+    private String mPoster_url;
 
     private String mActors;
     private String mDirector;
@@ -17,10 +16,11 @@ public class MovieInfo {
     private String mMetascore;
     private String mGenre;
 
-    public MovieInfo(String MovieName, String Genre, String IMDB, String Meta, String Rel, String Director, String Writers, String Actors, String Plot) {
+    public MovieInfo(String MovieName, String Genre, String IMDB, String Meta, String Rel, String Director, String Writers, String Actors, String Plot,String poster_url) {
         mMovieName = MovieName;
         mPlot = Plot;
         mIMDBRating = IMDB;
+        mPoster_url=poster_url;
 
         mActors= Actors;
         mDirector=Director;
@@ -73,6 +73,10 @@ public class MovieInfo {
 
     public String getRelease() {
         return mReleaseDate;
+    }
+    public String getPoster()
+    {
+        return mPoster_url;
     }
 }
 
